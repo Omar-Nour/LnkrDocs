@@ -1,0 +1,47 @@
+.. _clinic_views:
+
+Clinic Views
+================
+- Clinic views file  **@ dentist/api/views/clinic.py**
+- Dentist views file is the most **IMPORTANT** Module in Dentist app as it contain all Query logics and functions.
+
+- In the Dentist views we mainly used **Django REST framework** , feel free to check the: `Documentaion <https://www.django-rest-framework.org/>`_.
+
+
+- Dentist Views Contains *Three main Functions:
+	- api_create_dentist
+	- api_activate_dentist
+	- DentistViewSet
+
+
+
+
+**api_create_dentist** Function
+-------------------------------
+
+- **api_create_dentist** Function is a simple *POST function that takes the *request and returns HTTP_201_CREATED *response if the user/dentist created
+
+- creating dentist object process contain *two main operations
+	- creating Customuser object
+	- then creating dentist object
+
+	**dentist table has OneToOneField Relation with CustomeUser table
+
+
+
+
+- JSON request for this Endpoint is as below: 
+{
+    "user": {
+        "mobile": "01005170441",
+        "email": "fekri@main.com",
+        "password": "passowrd",
+        "national_id": "01005170441"
+    },
+    "dentist": {
+        "full_name": "fekri main",
+        "qualifications": "tes qualifications",
+        "speciality": [1]
+
+    }
+}

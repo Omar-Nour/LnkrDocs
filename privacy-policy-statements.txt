@@ -1,0 +1,61 @@
+CLAUSE 1: Information collected (type of information and how we collect)
+1. Information patient users may provide us directly
+We may collect information that is related directly to the patient users. These information is provided by the patient users him/her self as during the registration process to LNKR services or providing them via contacting customer support. The information may include, without limitations to: full name, birthrate, home address, work address, email-address, phone number, current subscription to insurance company, payment method information, personal picture, information collected from questionnaires and/or events if any, or other information the patient agreed to provide him/her self.
+
+2. information collected through the use of LNKR services
+When you visit and interact with any of our services, we collect certain information about your usage. The features you use, the links you visit, and the type, size, and filenames of items you submit to the Services are all part of this information.
+
+3. payment methods
+When you register for certain paid Services, we gather payment and billing information. When you register, for example, we ask you to designate a billing representative and provide their name and contact information. Payment information, such as credit card numbers, may also be provided, which we gather via secure payment processing providers.
+4. cookies
+#TBD
+5. Children's privacy
+Users who have reached the age of majority in their jurisdiction are eligible to utilize our services (18 years of age or older in most jurisdictions). Furthermore, unless required by law, we do not intentionally collect information from persons under the age of majority, often known as the "Protected Age," without parental consent. Please do not give us with any information about yourself if you are under the Protected Age.
+If you have reason to believe we may have acquired information from a child under the Protected Age by mistake, please let us know . If we discover that we have obtained Personal Information from a person under the Protected Age accidentally, we will remove it completely from our servers and databases.
+
+6. Device and connection
+We gather data from your computer, phone, tablet, or other device that you use to access the Services. When you install, access, update, or use our Services, this device information includes your connection type and settings. We also gather information about your operating system, browser type, and IP address via your device.
+
+
+
+CLAUSE 2: How we use the collected Information
+1- We use information about you to provide the Services to you, including to process transactions with you, authenticate you when you log in, provide customer support, and operate, maintain, and improve the Services.
+
+2- We are always aiming to make our services smarter, faster, safer, more integrated and more convenient. We use information and collective intelligence (including feedback) about how people use our services to identify areas of troubleshooting, trends, usage, activity patterns, and integration. We will improve our services and  develop new products, features and technologies. For example, we may save queries run time to monitor the internal performance of our applications and find out when it needs upgrading and improvement. 
+
+3- Track your billing and payment history, to be analyzed for fraud detection or recommendations for promotional offers.
+
+4- sending relevant emails and notifications
+
+5- show relevant advertisements
+
+
+
+
+CLAUSE 3: Managing your data
+As a patient user using the LNKR services, you may the access rights to:
+access and see your own data
+request to modify your data
+request to delete all of your data from our servers and databases completely
+
+
+
+
+CLAUSE 4: Future changes to the policy statements
+We may update the privacy policy statements we needed to reflect changes and  align with legal requirements. We shall then update the privacy policy statements on our website page with the date of the update. We will notify our services' users with a change in the privacy policy statements through email, phone message, or any other contact information we see available and feasible.
+
+CLAUSE 5: Contact Information
+1. How I may contact LNKR services
+May you have any questions and needs more information about our services, you can use one of the following communication channels to contact us:
+
+a) Email
+email to send to: ...............
+subject we recommend to use: ...............
+infromation we recomment to provide in the email body:...............
+b) Phone
+you may call one of the following numbers on the corresponding working hours:
+phone number 1: ...................................
+working hours: .........................................
+
+phone number 2: ...................................
+working hours: .........................................

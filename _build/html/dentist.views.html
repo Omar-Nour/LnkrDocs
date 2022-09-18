@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dentist Views &mdash; LNKR 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Clinic Views" href="clinic.views.html" />
+    <link rel="prev" title="Clinic URLS" href="clinic.urls.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> LNKR
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">LNKR</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="apps.html">Apps app</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="dentist.html">Dentist app</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dentist.html#models">Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dentist.html#urls">Urls</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="dentist.html#views">Views</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Dentist Views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="clinic.views.html">Clinic Views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="calendar.views.html">Calendar Views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="homepage.views.html">Homepage Views</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="patient.html">Patient app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visit.html">Visit app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pharmacy.html">Pharmacy app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assets.html">Assets app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html">Internal app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analytics.html">Analytics app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth.html">AUTH App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html">Apps app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplier.html">Supplier App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html">Quick Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LNKR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">LNKR</a> &raquo;</li>
+          <li><a href="dentist.html">Dentist app</a> &raquo;</li>
+      <li>Dentist Views</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/dentist.views.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dentist-views">
+<span id="id1"></span><h1>Dentist Views<a class="headerlink" href="#dentist-views" title="Permalink to this heading"></a></h1>
+<ul>
+<li><p>Dentist views file  <strong>&#64; dentist/api/views/dentist.py</strong></p></li>
+<li><p>Dentist views file is the most <strong>IMPORTANT</strong> Module in Dentist app as it contain all Query logics and functions.</p></li>
+<li><p>In the Dentist views we mainly used <strong>Django REST framework</strong> , feel free to check the: <a class="reference external" href="https://www.django-rest-framework.org/">Documentaion</a>.</p></li>
+<li><dl>
+<dt>Dentist Views Contains <a href="#id2"><span class="problematic" id="id3">*</span></a>Five main Functions:</dt><dd><blockquote>
+<div><ul class="simple">
+<li><p>create_dentist</p></li>
+<li><p>activate_dentist</p></li>
+<li><p>DentistViewSet</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>RequestsViewSet</p></li>
+<li><p>AdminRequestsViewSet</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<section id="create-dentist-function">
+<h2><strong>create_dentist</strong> Function<a class="headerlink" href="#create-dentist-function" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p><strong>create_dentist</strong> Function is a simple <a href="#id4"><span class="problematic" id="id5">*</span></a>POST function that takes the <a href="#id6"><span class="problematic" id="id7">*</span></a>request and returns HTTP_201_CREATED <a href="#id8"><span class="problematic" id="id9">*</span></a>response if the user/dentist created</p></li>
+<li><dl>
+<dt>creating dentist object process contain <a href="#id10"><span class="problematic" id="id11">*</span></a>two main operations</dt><dd><ul class="simple">
+<li><p>creating Customuser object</p></li>
+<li><p>then creating dentist object</p></li>
+</ul>
+<p><a href="#id12"><span class="problematic" id="id13">**</span></a>dentist table has OneToOneField Relation with CustomeUser table</p>
+</dd>
+</dl>
+</li>
+<li><p>JSON request for this Endpoint is as below:</p></li>
+</ul>
+<dl>
+<dt>{</dt><dd><dl class="simple">
+<dt>“user”: {</dt><dd><p>“mobile”: “01005170441”,
+“email”: “<a class="reference external" href="mailto:fekri&#37;&#52;&#48;main&#46;com">fekri<span>&#64;</span>main<span>&#46;</span>com</a>”,
+“password”: “passowrd”,
+“national_id”: “01005170441”</p>
+</dd>
+</dl>
+<p>},
+“dentist”: {</p>
+<blockquote>
+<div><p>“full_name”: “fekri main”,
+“qualifications”: “tes qualifications”,
+“speciality”: [1]</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+</section>
+<section id="activate-dentist-function">
+<h2><strong>activate_dentist</strong> Function<a class="headerlink" href="#activate-dentist-function" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>activate_dentist</strong> Function is a simple <a href="#id14"><span class="problematic" id="id15">*</span></a>POST function that takes the dentist uuid and tries to activate it and if the user is an admin it would return HTTP_200_OK else it would return HTTP_401_UNAUTHORIZED</p></li>
+</ul>
+</section>
+<section id="dentistviewset">
+<h2><strong>DentistViewSet</strong><a class="headerlink" href="#dentistviewset" title="Permalink to this heading"></a></h2>
+<p>Dentist APIs.
+Retrieve and update Dentist instance.</p>
+<ul>
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul class="simple">
+<li><p><strong>get_patients_for_authenticated_dentist</strong> : Retrieves all the patients that have scheduled a visit with this dentist using dentist id (with pagination) and returns HTTP_200_OK or HTTP_403_FORBIDDEN</p></li>
+<li><p><strong>get_patients_search</strong> :  Retrieves all the patients that have scheduled a visit with this dentist using dentist id (without pagination) and returns HTTP_200_OK or HTTP_403_FORBIDDEN</p></li>
+<li><p><strong>get_referred_patients</strong> :  Retrieves all the referrals made by the dentist of dentist_id (This method is only available for superusers) and returns HTTP_200_OK or HTTP_403_FORBIDDEN or HTTP_400_BAD_REQUEST</p></li>
+<li><p><strong>get_home_analytics</strong> :  get home analytics for dentist (number of patients, prescriptions, orders) using dentist_id and returns HTTP_400_BAD_REQUEST if it fails</p></li>
+<li><p><strong>get_accounting</strong> :  Get Accounting Data from Dentist filtered by day/month/year and returns HTTP_200_OK or HTTP_403_FORBIDDEN</p></li>
+<li><p><strong>get_golden_items</strong> :  gets the favourite items for a dentist using dentist id and returns HTTP_200_OK</p></li>
+<li><p><strong>get_dentist_expenses</strong> :  gets the expense of a certain dentist using dentist_id and returns HTTP_200_OK</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><p><strong>update_dentist</strong> : Partially updates a Dentist with the given uuid and returns HTTP_200_OK or HTTP_400_BAD_REQUEST</p></li>
+<li><p><strong>create_patient_from_dentist_api</strong> :  Create a patient from the dentist api. Patients created using this method would be associated with the dentist that created them, The association is achieved via a PatientVisit of type referral. returns HTTP_201_CREATED or HTTP_400_BAD_REQUEST</p></li>
+<li><p><strong>create_prescription</strong> : Create a new prescription for a patient using dentist id and returns HTTP_201_CREATED or HTTP_400_BAD_REQUEST or HTTP_403_FORBIDDEN</p></li>
+<li><p><strong>create_dentist_expenses</strong> : creates an expense for a dentist using his id and returns HTTP_201_CREATED</p></li>
+<li><p>JSON Format :
+{</p>
+<blockquote>
+<div><p>“salaries”: “2000”,
+“bills”: “300”,
+“purchases”: “450”,
+“other”: {“other”: “240”}</p>
+</div></blockquote>
+<p>}</p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="requestviewset">
+<h2><strong>RequestViewSet</strong><a class="headerlink" href="#requestviewset" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul>
+<li><p><strong>list</strong></p></li>
+<li><p><strong>get_queryset</strong> :  returns all requests of a certain dentist using dentist id</p></li>
+<li><p><strong>retrieve</strong> :  returns a certain request using dentist and request id</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><p><strong>create</strong> : creates a new request with the given dentist id and returns HTTP_200_OK</p></li>
+<li><p><strong>update</strong> :  updates a request using its uuid (partial/all-data) and returns HTTP_200_OK</p></li>
+<li><p>JSON Format :</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="adminrequestsviewset">
+<h2><strong>AdminRequestsViewSet</strong><a class="headerlink" href="#adminrequestsviewset" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul>
+<li><p><strong>list</strong>:</p></li>
+<li><p><strong>get_queryset</strong> :  returns all requests of all dentists</p></li>
+<li><p><strong>retrieve</strong> :  returns a certain request using dentist and request id</p></li>
+<li><p><strong>getPending</strong> : returns pending requests with HTTP_200_OK</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><p><strong>update</strong> :  updates a request using its uuid (partial/all-data) and returns HTTP_200_OK</p></li>
+<li><p>JSON Format :</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="clinic.urls.html" class="btn btn-neutral float-left" title="Clinic URLS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="clinic.views.html" class="btn btn-neutral float-right" title="Clinic Views" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fekri@LNKR.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

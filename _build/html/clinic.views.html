@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clinic Views &mdash; LNKR 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Calendar Views" href="calendar.views.html" />
+    <link rel="prev" title="Dentist Views" href="dentist.views.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> LNKR
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">LNKR</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="apps.html">Apps app</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="dentist.html">Dentist app</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dentist.html#models">Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dentist.html#urls">Urls</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="dentist.html#views">Views</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dentist.views.html">Dentist Views</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Clinic Views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="calendar.views.html">Calendar Views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="homepage.views.html">Homepage Views</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="patient.html">Patient app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visit.html">Visit app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pharmacy.html">Pharmacy app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assets.html">Assets app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html">Internal app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analytics.html">Analytics app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth.html">AUTH App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html">Apps app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplier.html">Supplier App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html">Quick Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LNKR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">LNKR</a> &raquo;</li>
+          <li><a href="dentist.html">Dentist app</a> &raquo;</li>
+      <li>Clinic Views</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/clinic.views.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="clinic-views">
+<span id="id1"></span><h1>Clinic Views<a class="headerlink" href="#clinic-views" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p>Clinic views file  <strong>&#64; dentist/api/views/clinic.py</strong></p></li>
+<li><p>In the Clinic views we mainly used <strong>Django REST framework</strong> , feel free to check the: <a class="reference external" href="https://www.django-rest-framework.org/">Documentaion</a>.</p></li>
+<li><dl class="simple">
+<dt>Clinic Views Contains <a href="#id2"><span class="problematic" id="id3">*</span></a>Five main Functions:</dt><dd><ul>
+<li><p>ClinicViewSet</p></li>
+<li><p>AssistantViewSet</p></li>
+<li><p>ExpensesViewSet</p></li>
+<li><p>DentistExpensesCategoriesViewSet</p></li>
+<li><p>DentistExpensesCategoriesDetails</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<section id="clinicviewset">
+<h2><strong>ClinicViewSet</strong><a class="headerlink" href="#clinicviewset" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>Clinic ViewSet has two main functionalities:</dt><dd><ul class="simple">
+<li><p>get : Read specific clinic using ID</p></li>
+<li><p>post : Create new clinic associated with logged in Dentist</p></li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><p><em>Note</em> :</p></li>
+</ul>
+<p>1. dentist ID is obtained from the currently authenticated user to add more security on create operation. let a scenario where
+an authenticated dentist manipulates the API request by modifying ‘dentist_id’ to any other dentist ID.</p>
+<p>2. creating a clinic with a superuser will break down the logic. a clinic should only be associated with a dentist, so it makes
+no sense to call the following function with superuser account</p>
+<ul>
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul class="simple">
+<li><p><strong>read_clinic</strong> : returns the data of a specific clinic using the given uuid and returns an HTTP_200_OK if found.</p></li>
+<li><p><strong>get_my_clinics</strong> :  returns all clinics associated with the logged in dentist and returns either HTTP_200_OK or HTTP_400_BAD_REQUEST</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><em>POST Functions</em> :</dt><dd><ul class="simple">
+<li><p><strong>create_clinic</strong> : creates a clinic and returns HTTP_201_CREATED or HTTP_400_BAD_REQUEST</p></li>
+<li><p><strong>update_clinic</strong> :  updates a clinic using uuid (partial/all-data) and returns HTTP_200_OK oR HTTP_400_BAD_REQUEST</p></li>
+<li><p>JSON Format :</p></li>
+</ul>
+<p>{
+“clinic”: {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“address”: {</dt><dd><p>“zip_code”: “1111”,
+“building”: “building no. 1”,
+“street”: “test street”,
+“city”: “Cairo”</p>
+</dd>
+</dl>
+<p>},
+“name”: “Fekri8 Clinic”,
+“phone_num”: “01271022008”,
+“registration_id”: 123456789,
+“working_days_hours”: {</p>
+<blockquote>
+<div><p>“saturday”: “[8-12]”</p>
+</div></blockquote>
+<p>},
+“specialities”: [</p>
+<blockquote>
+<div><p>1</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>}</p>
+</section>
+<section id="assistantviewset">
+<h2><strong>AssistantViewSet</strong><a class="headerlink" href="#assistantviewset" title="Permalink to this heading"></a></h2>
+<ul>
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul class="simple">
+<li><p><strong>list</strong></p></li>
+<li><p><strong>get_queryset</strong> :  returns all assistants in a clinic using clinic uuid</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><em>POST Functions</em> :</dt><dd><ul class="simple">
+<li><p><strong>create_assistant</strong> : creates a new assistant at the clinic with the given uuid and returns HTTP_201_CREATED or HTTP_400_BAD_REQUEST</p></li>
+<li><p><strong>update</strong> :  updates an assistant using clinic uuid (partial/all-data) and returns HTTP_200_OK or HTTP_400_BAD_REQUEST</p></li>
+<li><p>JSON Format :</p></li>
+</ul>
+<p>{
+“user_data”: {</p>
+<blockquote>
+<div><p>“mobile”: “01005171551”,
+“email”: “<a class="reference external" href="mailto:assistantesra2&#37;&#52;&#48;lnkr&#46;com">assistantesra2<span>&#64;</span>lnkr<span>&#46;</span>com</a>”,
+“password”: “test”,
+“national_id”: “29006141400777”</p>
+</div></blockquote>
+<p>},
+“assistant_data”: {</p>
+<blockquote>
+<div><p>“full_name”: “assistant esraa”,
+“clinic_uuid”:”f27b1e49-0082-4033-b2c6-0baad3ec8e06”</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>}</p>
+<ul class="simple">
+<li><p><strong>destroy</strong> : deletes an assistant using clinic uuid</p></li>
+</ul>
+</section>
+<section id="expensesviewset">
+<h2><strong>ExpensesViewSet</strong><a class="headerlink" href="#expensesviewset" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul>
+<li><p><strong>list</strong></p></li>
+<li><p><strong>get_queryset</strong> :  returns all expenses of a certain categoy using category uuid</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><p><strong>create</strong> : creates a new expense with the given category id and returns HTTP_200_OK</p></li>
+<li><p><strong>update</strong> :  updates an expense using its uuid (partial/all-data) and returns HTTP_200_OK</p></li>
+<li><p>JSON Format :</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="dentistexpensescategoriesviewset">
+<h2><strong>DentistExpensesCategoriesViewSet</strong><a class="headerlink" href="#dentistexpensescategoriesviewset" title="Permalink to this heading"></a></h2>
+<p>Retrieve, Update and Delete Dentist Expenses Categories APIs.
+Inherits form generics.ListCreateAPIView.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul>
+<li><p><strong>get</strong> :  gets all Dentist Expenses Categories using clinic uuid and returns HTTP_200_OK or HTTP_400_BAD_REQUEST</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><p><strong>post</strong> : creates a new dentist expense category with the given clinic uuid and returns HTTP_201_CREATED or HTTP_400_BAD_REQUEST</p></li>
+<li><p>JSON Format :</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="dentistexpensescategoriesdetails">
+<h2><strong>DentistExpensesCategoriesDetails</strong><a class="headerlink" href="#dentistexpensescategoriesdetails" title="Permalink to this heading"></a></h2>
+<p>Inherits form generics.RetrieveUpdateDestroyAPIView</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul>
+<li><p><strong>get</strong> :  retrieves a Dentist Expense Category using clinic, category uuid and returns HTTP_200_OK or HTTP_400_BAD_REQUEST</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><p><strong>put</strong> : updates a Dentist Expense Category with the given clinic, category uuid and returns HTTP_200_OK or HTTP_400_BAD_REQUEST</p></li>
+<li><p>JSON Format :</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>delete</strong> : deletes an expnse category using clinic and category uuid  nad returns HTTP_200_OK</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dentist.views.html" class="btn btn-neutral float-left" title="Dentist Views" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="calendar.views.html" class="btn btn-neutral float-right" title="Calendar Views" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fekri@LNKR.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

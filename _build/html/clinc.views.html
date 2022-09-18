@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clinic Views &mdash; LNKR 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> LNKR
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">LNKR</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LNKR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Clinic Views</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/clinc.views.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="clinic-views">
+<span id="id1"></span><h1>Clinic Views<a class="headerlink" href="#clinic-views" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p>Clinic views file  <strong>&#64; dentist/api/views/clinic.py</strong></p></li>
+<li><p>Dentist views file is the most <strong>IMPORTANT</strong> Module in Dentist app as it contain all Query logics and functions.</p></li>
+<li><p>In the Dentist views we mainly used <strong>Django REST framework</strong> , feel free to check the: <a class="reference external" href="https://www.django-rest-framework.org/">Documentaion</a>.</p></li>
+<li><dl class="simple">
+<dt>Dentist Views Contains <a href="#id2"><span class="problematic" id="id3">*</span></a>Three main Functions:</dt><dd><ul>
+<li><p>api_create_dentist</p></li>
+<li><p>api_activate_dentist</p></li>
+<li><p>DentistViewSet</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<section id="api-create-dentist-function">
+<h2><strong>api_create_dentist</strong> Function<a class="headerlink" href="#api-create-dentist-function" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p><strong>api_create_dentist</strong> Function is a simple <a href="#id4"><span class="problematic" id="id5">*</span></a>POST function that takes the <a href="#id6"><span class="problematic" id="id7">*</span></a>request and returns HTTP_201_CREATED <a href="#id8"><span class="problematic" id="id9">*</span></a>response if the user/dentist created</p></li>
+<li><dl>
+<dt>creating dentist object process contain <a href="#id10"><span class="problematic" id="id11">*</span></a>two main operations</dt><dd><ul class="simple">
+<li><p>creating Customuser object</p></li>
+<li><p>then creating dentist object</p></li>
+</ul>
+<p><a href="#id12"><span class="problematic" id="id13">**</span></a>dentist table has OneToOneField Relation with CustomeUser table</p>
+</dd>
+</dl>
+</li>
+<li><p>JSON request for this Endpoint is as below:</p></li>
+</ul>
+<dl>
+<dt>{</dt><dd><dl class="simple">
+<dt>“user”: {</dt><dd><p>“mobile”: “01005170441”,
+“email”: “<a class="reference external" href="mailto:fekri&#37;&#52;&#48;main&#46;com">fekri<span>&#64;</span>main<span>&#46;</span>com</a>”,
+“password”: “passowrd”,
+“national_id”: “01005170441”</p>
+</dd>
+</dl>
+<p>},
+“dentist”: {</p>
+<blockquote>
+<div><p>“full_name”: “fekri main”,
+“qualifications”: “tes qualifications”,
+“speciality”: [1]</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fekri@LNKR.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

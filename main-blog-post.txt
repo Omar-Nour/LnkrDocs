@@ -1,0 +1,32 @@
+We target the connectivity between the stakeholders in the health ecosystem. Beginning with the patients, and continuing through physicians, pharmacies, and insurance companies.
+
+
+The said stakeholders can’t operate individually, Therefore our main goal is to exploit this connectivity in order to empower each of the said stakeholders with the functionalities and data analysis they need to leverage the health ecosystem in Egypt.
+
+
+Through delivering broad automation and analytics, our goal is a fully integrated, tailored solution that lowers operating costs, empowering patients and clinicians with the information they need, and assisting health systems in allocating resources where they are most needed.
+
+For the patient
+With Lnkr, a patient can have his EHRs securly saved on his phone. The EHRs contain data related to a patient’s medical history, diagnoses, medications, treatment plans, immunization dates, allergies, radiology images, and laboratory and test results. The EHR can be added to the patient profile using his phone or LNKR physical card. Regardless of whether the physicians/lab is in LNKR network or not, the EHR can still be created and managed. 
+
+
+For the physicians
+
+A clinic management system that provides the physicians with the basic functionality to manage their clinics. The system we provide is offered with the e-prescription that automatically does the drug-to-drug, and drug-to-disease interaction with the patient's historical EHRs.
+
+[we are considering the drug-to-allergy interaction]***
+
+
+The economical responsibility
+
+At LNKR, we are aware of the economical responsibility, and we do consider leveraging the recent green economy targeted by Egypt. Aligned with recent goals to be addressed in COP27, we aim to reduce the paper consumption in traditional paper prescription with our e-prescription solution.
+
+Data security
+The baseline at LNKR is that no data is shared from one party to another unless with a consent given. 
+
+
+
+Maybe we can have on of these 2 scenarios:
+A physician can not use the drug-to-drug interaction over patient EHRs without a consent from the patient.
+A physician using drug-to-drug interaction for patient historical EHRs can be done with no exposure of the patient data.
+

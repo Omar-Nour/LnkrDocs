@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Refactored Views &mdash; LNKR 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Visit app" href="visit.html" />
+    <link rel="prev" title="Patient Views" href="patient.views.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> LNKR
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">LNKR</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="apps.html">Apps app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dentist.html">Dentist app</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="patient.html">Patient app</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="patient.html#models">Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="patient.html#urls">Urls</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="patient.html#views">Views</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="patient.views.html">Patient Views</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Patient Refactored Views</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="visit.html">Visit app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pharmacy.html">Pharmacy app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assets.html">Assets app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html">Internal app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analytics.html">Analytics app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth.html">AUTH App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html">Apps app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplier.html">Supplier App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html">Quick Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LNKR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">LNKR</a> &raquo;</li>
+          <li><a href="patient.html">Patient app</a> &raquo;</li>
+      <li>Patient Refactored Views</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/patient.views_refactor.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="patient-refactored-views">
+<span id="patient-views-refactor"></span><h1>Patient Refactored Views<a class="headerlink" href="#patient-refactored-views" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p>Patient refactored views file  <strong>&#64; patient/api/views_refactor.py</strong></p></li>
+<li><p>In the Patient refactored views we mainly used <strong>Django REST framework</strong> , feel free to check the: <a class="reference external" href="https://www.django-rest-framework.org/">Documentaion</a>.</p></li>
+<li><dl class="simple">
+<dt>Patient Refactored Views Contains <a href="#id1"><span class="problematic" id="id2">*</span></a>Six main Functions:</dt><dd><ul>
+<li><p>PatientViewSet</p></li>
+<li><p>PatientLabView</p></li>
+<li><p>PatientScanView</p></li>
+<li><p>PatientReportView</p></li>
+<li><p>PatientHealthRecordView</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<section id="patientviewset-function">
+<h2><strong>PatientViewSet</strong> Function<a class="headerlink" href="#patientviewset-function" title="Permalink to this heading"></a></h2>
+<ul>
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt><strong>get_patient_details</strong><span class="classifier">Returns the personal information of a patient using the patient id</span></dt><dd><ul>
+<li><dl class="simple">
+<dt>Permissions:</dt><dd><ul>
+<li><ul>
+<li><p>A patient can view their personal information.</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>A doctor can view patients’ information.</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>A superuser can view patients information (update or delete not yet implemented)</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>ex : /api/patient/18</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>get_patient_visits</strong><span class="classifier">Returns the patient visits.</span></dt><dd><ul>
+<li><dl class="simple">
+<dt>Permissions:</dt><dd><ul>
+<li><ul>
+<li><p>A patient can only view their visits.</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>A superuser can view patients visits</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><dl>
+<dt><strong>register_patient</strong><span class="classifier">for creating a patient with full data in request</span></dt><dd><ul class="simple">
+<li><p>JSON Format :</p></li>
+</ul>
+<dl class="simple">
+<dt>{</dt><dd><dl class="simple">
+<dt>“profile”: {</dt><dd><p>“email”: “<a class="reference external" href="mailto:test_email_2&#37;&#52;&#48;mail&#46;com">test_email_2<span>&#64;</span>mail<span>&#46;</span>com</a>”,
+“mobile”: “22345678910”,
+“national_id”: “2112233444455”,
+“password”: “password”</p>
+</dd>
+</dl>
+</dd>
+<dt>},</dt><dd><p>“full_name”: “test_patient_2”,
+“age”: “20”,
+“gender”: “1”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</li>
+<li><p><strong>update_patient</strong> : <a href="#id3"><span class="problematic" id="id4">*</span></a>PUT function for updating patient data (partial/full)</p></li>
+<li><dl>
+<dt><strong>create_patient_visit</strong><span class="classifier">for creating a patient visit using patient id</span></dt><dd><ul class="simple">
+<li><p>JSON Format :</p></li>
+</ul>
+<dl class="simple">
+<dt>{</dt><dd><p>“scheduled_date”: “2022-06-6T19:22:03.876Z”,
+“visit_status”:”Confirmed”,
+“visit_type”:”First Visit”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="patientlabview">
+<h2><strong>PatientLabView</strong><a class="headerlink" href="#patientlabview" title="Permalink to this heading"></a></h2>
+<p>Get and Create Patient lab reports.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul>
+<li><p><strong>get</strong> : Retrieves all lab reports for a patient using his id</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><dl class="simple">
+<dt><strong>post</strong><span class="classifier">for creating a lab report for a patient using his id</span></dt><dd><ul>
+<li><p>JSON Format :</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="patientscanview">
+<h2><strong>PatientScanView</strong><a class="headerlink" href="#patientscanview" title="Permalink to this heading"></a></h2>
+<p>Get and Create Patient Scan results.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul>
+<li><p><strong>get</strong> : Retrieves all scan results for a patient using his id</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><dl class="simple">
+<dt><strong>post</strong><span class="classifier">for creating a scan result for a patient using his id</span></dt><dd><ul>
+<li><p>JSON Format :</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="patientreportview">
+<h2><strong>PatientReportView</strong><a class="headerlink" href="#patientreportview" title="Permalink to this heading"></a></h2>
+<p>Get and Create Patient visit reports.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul>
+<li><p><strong>get</strong> : Retrieves all reports for a patient using his id</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><dl class="simple">
+<dt><strong>post</strong><span class="classifier">for creating a report for a patient using his id</span></dt><dd><ul>
+<li><p>JSON Format :</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="patienthealthrecordview">
+<h2><strong>PatientHealthRecordView</strong><a class="headerlink" href="#patienthealthrecordview" title="Permalink to this heading"></a></h2>
+<p>Get and Create Patient health records.</p>
+<ul>
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul class="simple">
+<li><p><strong>get</strong> : Retrieves all health records for a patient using his id</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><dl>
+<dt><strong>post</strong><span class="classifier">for creating a health record for a patient using his id</span></dt><dd><ul class="simple">
+<li><p>JSON Format :</p></li>
+</ul>
+<dl class="simple">
+<dt>{</dt><dd><p>“weight”: “200”,
+“height”: “160”,
+“blood_pressure”: “30”,
+“sugar_level”: “30”,
+“temperature”: “30”,
+“oxygen_saturation”: “30”,
+“other”: {“other_attr”:”5”, “last_attr”:”7”}</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="patient.views.html" class="btn btn-neutral float-left" title="Patient Views" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="visit.html" class="btn btn-neutral float-right" title="Visit app" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fekri@LNKR.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

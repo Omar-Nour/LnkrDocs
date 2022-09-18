@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Views &mdash; LNKR 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Patient Refactored Views" href="patient.views_refactor.html" />
+    <link rel="prev" title="Patient URLS" href="patient.urls.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> LNKR
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">LNKR</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="apps.html">Apps app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dentist.html">Dentist app</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="patient.html">Patient app</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="patient.html#models">Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="patient.html#urls">Urls</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="patient.html#views">Views</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Patient Views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="patient.views_refactor.html">Patient Refactored Views</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="visit.html">Visit app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pharmacy.html">Pharmacy app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assets.html">Assets app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html">Internal app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analytics.html">Analytics app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth.html">AUTH App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html">Apps app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplier.html">Supplier App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html">Quick Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LNKR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">LNKR</a> &raquo;</li>
+          <li><a href="patient.html">Patient app</a> &raquo;</li>
+      <li>Patient Views</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/patient.views.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="patient-views">
+<span id="id1"></span><h1>Patient Views<a class="headerlink" href="#patient-views" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p>Patient views file  <strong>&#64; patient/api/views.py</strong></p></li>
+<li><p>In the Patient views we mainly used <strong>Django REST framework</strong> , feel free to check the: <a class="reference external" href="https://www.django-rest-framework.org/">Documentaion</a>.</p></li>
+<li><dl class="simple">
+<dt>Patient Views Contains <a href="#id2"><span class="problematic" id="id3">*</span></a>Seven main Functions:</dt><dd><ul>
+<li><p>PrescriptionsViewSet</p></li>
+<li><p>PrescriptionsQr</p></li>
+<li><p>all_patients</p></li>
+<li><p>VisitViewSet</p></li>
+<li><p>TreatmentPlanViewSet</p></li>
+<li><p>TreatmentPlanDetails</p></li>
+<li><p>verify_patient</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<section id="verify-patient-function">
+<h2><strong>verify_patient</strong> Function<a class="headerlink" href="#verify-patient-function" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>verify_patient</strong> Function is a simple <a href="#id4"><span class="problematic" id="id5">*</span></a>POST function that takes patient data through the request and returns a message with the problem in data along with HTTP_400_BAD_REQUEST OR an HTTP_200_OK if all data is valid</p></li>
+<li><dl class="simple">
+<dt>JSON Format:</dt><dd><p>{
+“uuid”: “9e0f9ce5-5276-4d21-abf9-f8dfe430a849”,
+“pin_code”: “0000”
+}</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="prescriptionsviewset">
+<h2><strong>PrescriptionsViewSet</strong><a class="headerlink" href="#prescriptionsviewset" title="Permalink to this heading"></a></h2>
+<p>Get and Create Prescription APIs.</p>
+<ul>
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt><strong>get</strong><span class="classifier">Retrieves all prescriptions for a certain patient using his id</span></dt><dd><ul>
+<li><p>ex : /api/patient/prescription?patient=1</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><p><strong>post</strong> : for creating a prescription for a certain patient by the current dentist</p></li>
+<li><p>JSON Format :
+{</p>
+<blockquote>
+<div><blockquote>
+<div><p>“insurance”:1,
+“diseases”: [1,2],
+“patient”: 1,
+“drugs”:[
+{</p>
+<blockquote>
+<div><p>“comment”: “123”,
+“dose”: “123”,
+“frequency”: “Daily”,
+“general_name”: ” FluMist 2012-2013”</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“comment”: “123”,
+“dose”: “123”,
+“frequency”: “Daily”,
+“general_name”: ” FluMist 2012-2013”</p>
+</div></blockquote>
+<p>}
+]</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="prescriptionsqr">
+<h2><strong>PrescriptionsQr</strong><a class="headerlink" href="#prescriptionsqr" title="Permalink to this heading"></a></h2>
+<p>Prescriptions QR APIs.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul>
+<li><dl class="simple">
+<dt><strong>get</strong><span class="classifier">returns the prescription of the given uuid</span></dt><dd><ul>
+<li><p>ex : /api/patient/prescription/qr?uuid=11c33f1c-1472-47d6-af19-7cb2afef6337</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>get_queryset</strong> :  returns all prescripions</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><dl class="simple">
+<dt><strong>post</strong><span class="classifier">creates a new prescripion</span></dt><dd><ul>
+<li><p>JSON Format:</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="all-patients">
+<h2><strong>all_patients</strong><a class="headerlink" href="#all-patients" title="Permalink to this heading"></a></h2>
+<p>Get all Patients API</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul>
+<li><p><strong>get</strong> :  returns all patients of the current dentist</p></li>
+<li><p><strong>retrieve</strong> :  returns a certain request using dentist and request id</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="visitviewset">
+<h2><strong>VisitViewSet</strong><a class="headerlink" href="#visitviewset" title="Permalink to this heading"></a></h2>
+<p>Get All Visits API.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul>
+<li><dl class="simple">
+<dt><strong>get</strong><span class="classifier">all visits for a certain patient using his id</span></dt><dd><ul>
+<li><p>ex : /api/patient/visits?patient=1</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><dl class="simple">
+<dt><strong>post</strong><span class="classifier">creates a new prescripion</span></dt><dd><ul>
+<li><p>JSON Format:</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="treatmentplanviewset">
+<h2><strong>TreatmentPlanViewSet</strong><a class="headerlink" href="#treatmentplanviewset" title="Permalink to this heading"></a></h2>
+<p>Get Treatment Plan API.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul>
+<li><dl class="simple">
+<dt><strong>get</strong><span class="classifier">returns the treatment plans for a certain patient usimg his id</span></dt><dd><ul>
+<li><p>ex : api/patient/treatment_plan/?patient=1</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="treatmentplandetails">
+<h2><strong>TreatmentPlanDetails</strong><a class="headerlink" href="#treatmentplandetails" title="Permalink to this heading"></a></h2>
+<p>Get, Update and Delete Treatment Plan</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>GET Functions</em> :</dt><dd><ul>
+<li><p><strong>get</strong> : returns the treatment plan for a certain patient usimg the plan’s id</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>POST Functions</em> :</dt><dd><ul>
+<li><p><strong>post</strong> : creates a new TreatmentPlan</p></li>
+<li><dl class="simple">
+<dt><strong>update</strong><span class="classifier">updates a treatment plan</span></dt><dd><ul>
+<li><p>JSON Format:</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="patient.urls.html" class="btn btn-neutral float-left" title="Patient URLS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="patient.views_refactor.html" class="btn btn-neutral float-right" title="Patient Refactored Views" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fekri@LNKR.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

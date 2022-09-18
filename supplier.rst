@@ -18,7 +18,7 @@ Urls
 .. toctree::
    :maxdepth: 2
 
-   supplier.views
+   supplier.urls
 
 
 Views
@@ -26,4 +26,4 @@ Views
 .. toctree::
    :maxdepth: 2
 
-   supplier.urls
+   supplier.views
